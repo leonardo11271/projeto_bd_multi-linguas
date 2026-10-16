@@ -1,12 +1,11 @@
-create table aprendizado(
-id_progresso        SERIAL PRIMARY KEY,
-id_usuario         int NOT NULL,
-modulo_id          int NOT NULL,
-minutos_praticados int NOT NULL,
-licoes_concluidas  int NOT NULL,
-data_registro      date NOT NULL
+create table avaliacao(
+
+avaliacao_nivel SERIAL PRIMARY KEY,
+id_avaliacao   int
+id_usuario     int NOT NULL,
+pontuacao_obtida decimal (5,2) NOT NULL,
+nivel resultante  varchar(20) NOT NULL,
+eh_reavaliacao_obrigatoria  NOT NULL,
+data_realizacao  NOT NULL
 );
-SELECT FROM aprendizado; 
-INSERT INTO aprendizado(id_usuario, modulo_id, minutos_praticados, licoes_concluidas, data_registro) values ('7','5', '20', '50', '2026-04-30')
-INSERT INTO escola (nome_instituicao, cnpj, email_contato,) values ('ingles' , '1678922892' , 'roberto333@gmail.com')
 
