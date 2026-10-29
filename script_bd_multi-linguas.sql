@@ -1,18 +1,18 @@
-CREATE TABLE progresso_aprendizado (
-  id_progresso SERIAL PRIMARY KEY,
-  fk_usuario int NOT NULL,
-  fk_avaliacao int NOT NULL,
-  minutos_praticados int NOT NULL,
-  licoes_concluidas int NOT NULL,
-  data_registro date NOT NULL,
-  constraint fk_usuario foreign key (fk_usuario)references usuario (id_usuario),
-  constraint fk_avaliacao foreign key (fk_avaliacao)references avaliacao_nivel (id_avaliacao)
+CREATE TABLE usuario (
+  id_usuario SERIAL PRIMARY KEY,
+  nome VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL ,
+  senha_hash VARCHAR(255) NOT NULL,
+  data_nascimento DATE NOT NULL,
+  faixa_etaria VARCHAR(255) NOT NULL,
+  tipo_perfil  VARCHAR(255) NOT NULL,
+  id_turma INT,
+  data_cadastro TIMESTAMP
 
 );
-SELECT * FROM progresso_aprendizado
 
-INSERT INTO progresso_aprendizado (fk_usuario, fk_avaliacao, minutos_praticados, licoes_concluidas, data_registro) VALUES (1, 1, 59, 5,'01-09-2021');
+SELECT * FROM usuario;
 
-INSERT INTO progresso_aprendizado (fk_usuario, fk_avaliacao, minutos_praticados, licoes_concluidas, data_registro) VALUES (1, 1, 43, 4,'02-10-2021');
+INSERT INTO usuario (nome, email, senha_hash, data_nascimento, faixa_etaria, tipo_perfil, id_turma, data_cadastro) values ('ja', 'j@gmail.com', '12', '2011/05/14', '15', 'es', '01', '2026/01/01');
 
-INSERT INTO progresso_aprendizado (fk_usuario, fk_avaliacao, minutos_praticados, licoes_concluidas, data_registro) VALUES (1, 1, 12, 2,'21-09-2021');
+
